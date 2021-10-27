@@ -43,6 +43,12 @@ async function connectDB() {
             'Browser': req.query.browser,
             'Resolution': req.query.resolution
         }
+
+        app.get('https://exo-portfolio-bot.herokuapp.com/new_user'), (req, res) => {
+            console.log(newUserInfo)
+            res.json(newUserInfo);
+        }
+
         res.json(newUserInfo);
 
     })
