@@ -14,7 +14,7 @@ const config = {
     database: "heroku_2dac715d3fc7515"
 }
 var corsOptions = {
-    origin: 'https://exodusdg.github.io',
+    origin: '*',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
