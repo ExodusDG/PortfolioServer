@@ -40,7 +40,7 @@ async function connectDB() {
 
         res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com:" + port);
         res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com/");
-        res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io/");
+        res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io");
         res.setHeader("Access-Control-Allow-Origin", "*");
         //    res.json({ 'status': 'ok' })
         res.json(newUserInfo);
@@ -68,7 +68,7 @@ async function connectDB() {
             console.log(nickname)
             res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com:" + port);
             res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com/");
-            res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io/");
+            res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io");
             res.setHeader("Access-Control-Allow-Origin", "*");
 
             if (is_auth == 1) {
@@ -105,7 +105,7 @@ async function connectDB() {
 
             res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com:" + port);
             res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com/");
-            res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io/");
+            res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io");
             res.setHeader("Access-Control-Allow-Origin", "*");
 
             if (isDataValid == 1) {
@@ -125,7 +125,7 @@ async function connectDB() {
 
         res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com:" + port);
         res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com/");
-        res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io/");
+        res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io");
         res.setHeader("Access-Control-Allow-Origin", "*");
         res.json({ 'is_auth': '0' })
     })
