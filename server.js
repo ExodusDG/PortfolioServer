@@ -34,7 +34,10 @@ async function connectDB() {
     )
 
     app.get('/', (req, res) => {
-        IP = req.connection.remoteAddress;
+        var IP = req.headers['x-forwarded-for'] ||
+            req.connection.remoteAddress ||
+            req.socket.remoteAddress ||
+            (req.connection.socket ? req.connection.socket.remoteAddress : null);
         console.log(req.query);
 
         var newUserInfo = {
