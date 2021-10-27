@@ -27,7 +27,7 @@ async function connectDB() {
         }
     });
 
-    app.get('/', (req, res) => {
+    app.get('https://exodusdg.github.io/', (req, res) => {
         IP = req.connection.remoteAddress;
         console.log(req.query);
 
@@ -38,7 +38,7 @@ async function connectDB() {
             'Resolution': req.query.resolution
         }
 
-        res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000/");
+        res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io/");
         res.setHeader("Access-Control-Allow-Origin", "*");
         //    res.json({ 'status': 'ok' })
         res.json(newUserInfo);
@@ -46,7 +46,7 @@ async function connectDB() {
     })
 
 
-    app.get('/admin', (req, res) => {
+    app.get('https://exodusdg.github.io/admin', (req, res) => {
         var IP;
         var nickname;
         IP = req.connection.remoteAddress;
@@ -64,7 +64,7 @@ async function connectDB() {
                 }
             });
             console.log(nickname)
-            res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000/");
+            res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io/");
             res.setHeader("Access-Control-Allow-Origin", "*");
 
             if (is_auth == 1) {
@@ -77,7 +77,7 @@ async function connectDB() {
     })
 
 
-    app.get('/auth', (req, res) => {
+    app.get('https://exodusdg.github.io/auth', (req, res) => {
         IP = req.connection.remoteAddress;
 
         var inputData = req.query;
@@ -99,7 +99,7 @@ async function connectDB() {
                 }
             });
 
-            res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000/");
+            res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io/");
             res.setHeader("Access-Control-Allow-Origin", "*");
 
             if (isDataValid == 1) {
@@ -111,20 +111,20 @@ async function connectDB() {
         }
     })
 
-    app.get('/logout', (req, res) => {
+    app.get('https://exodusdg.github.io/logout', (req, res) => {
         IP = req.connection.remoteAddress;
 
         conn.query('UPDATE `users` SET `is_auth` = "0" WHERE `ip` = "' + IP + '"')
 
 
-        res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000/");
+        res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io/");
         res.setHeader("Access-Control-Allow-Origin", "*");
         res.json({ 'is_auth': '0' })
     })
 
 
     app.listen(port, () => {
-        console.log(`Example app listening at http://localhost:${port}`)
+        console.log(`Example app listening at https://exodusdg.github.io:${port}`)
     })
 }
 
