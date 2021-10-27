@@ -1,6 +1,6 @@
 const mysql = require('mysql2/promise');
 var express = require('express')
-
+const cors = require('cors')
 var app = express()
 const port = process.env.PORT || 3000;
 
@@ -27,6 +27,10 @@ async function connectDB() {
         }
     });
 
+    app.use({
+        origin: 'https://exodusdg.github.io'
+    })
+
     app.get('/auth', (req, res) => {
         IP = req.connection.remoteAddress;
         console.log(req.query);
@@ -38,7 +42,7 @@ async function connectDB() {
             'Resolution': req.query.resolution
         }
 
-        //    res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com");
+        res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com");
         res.setHeader("Access-Control-Allow-Origin", "*");
         //    res.json({ 'status': 'ok' })
         res.json(newUserInfo);
