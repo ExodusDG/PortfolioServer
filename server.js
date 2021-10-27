@@ -77,7 +77,7 @@ async function connectDB() {
     })
 
 
-    app.get('https://exodusdg.github.io/auth', (req, res) => {
+    app.get('exodusdg.github.io/auth', (req, res) => {
         IP = req.connection.remoteAddress;
 
         var inputData = req.query;
@@ -124,7 +124,7 @@ async function connectDB() {
 
 
     app.listen(port, () => {
-        console.log(`Example app listening at https://exodusdg.github.io:${port}`)
+        console.log(`Example app listening at https://exo-portfolio-server.herokuapp.com:${port}`)
     })
 }
 
