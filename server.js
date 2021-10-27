@@ -13,10 +13,6 @@ const config = {
     password: "1d1d7748",
     database: "heroku_2dac715d3fc7515"
 }
-var corsOptions = {
-    origin: '*',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
 
 //Connect
 async function connectDB() {
@@ -31,7 +27,13 @@ async function connectDB() {
         }
     });
 
-    app.get('/auth', cors(corsOptions), (req, res) => {
+    app.use(
+        cors({
+            origin: 'https://exodusdg.github.io'
+        })
+    )
+
+    app.get('/auth', (req, res) => {
         IP = req.connection.remoteAddress;
         console.log(req.query);
 
@@ -46,7 +48,7 @@ async function connectDB() {
     })
 
 
-    app.get('https://exodusdg.github.io/admin', cors(corsOptions), (req, res) => {
+    app.get('https://exodusdg.github.io/admin', (req, res) => {
         var IP;
         var nickname;
         IP = req.connection.remoteAddress;
@@ -75,7 +77,7 @@ async function connectDB() {
     })
 
 
-    app.get('https://exodusdg.github.io/auth', cors(corsOptions), (req, res) => {
+    app.get('https://exodusdg.github.io/auth', (req, res) => {
         IP = req.connection.remoteAddress;
 
         var inputData = req.query;
@@ -106,7 +108,7 @@ async function connectDB() {
         }
     })
 
-    app.get('https://exodusdg.github.io/logout', cors(corsOptions), (req, res) => {
+    app.get('https://exodusdg.github.io/logout', (req, res) => {
         IP = req.connection.remoteAddress;
 
         conn.query('UPDATE `users` SET `is_auth` = "0" WHERE `ip` = "' + IP + '"')
