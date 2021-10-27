@@ -38,7 +38,6 @@ async function connectDB() {
             'Resolution': req.query.resolution
         }
 
-        res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com");
         res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io");
         res.setHeader("Access-Control-Allow-Origin", "*");
         //    res.json({ 'status': 'ok' })
@@ -65,7 +64,6 @@ async function connectDB() {
                 }
             });
             console.log(nickname)
-            res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com");
             res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io");
             res.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -101,7 +99,6 @@ async function connectDB() {
                 }
             });
 
-            res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com");
             res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io");
             res.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -119,8 +116,6 @@ async function connectDB() {
 
         conn.query('UPDATE `users` SET `is_auth` = "0" WHERE `ip` = "' + IP + '"')
 
-
-        res.setHeader("Access-Control-Allow-Origin", "https://exo-portfolio-server.herokuapp.com");
         res.setHeader("Access-Control-Allow-Origin", "https://exodusdg.github.io");
         res.setHeader("Access-Control-Allow-Origin", "*");
         res.json({ 'is_auth': '0' })
