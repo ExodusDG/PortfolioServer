@@ -44,10 +44,16 @@ async function connectDB() {
             'Resolution': req.query.resolution
         }
 
-        app.get('https://exo-portfolio-bot.herokuapp.com/new_user'), (req, res) => {
-            console.log(newUserInfo)
-            res.json(newUserInfo);
-        }
+        $.ajax({
+            url: 'https://exo-portfolio-bot.herokuapp.com/new_user',
+            method: 'get',
+            dataType: 'json',
+            async: false,
+            data: newUserInfo,
+            success: function(data) {
+                console.log(data);
+            }
+        });
 
         res.json(newUserInfo);
 
