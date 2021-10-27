@@ -2,16 +2,16 @@ const mysql = require('mysql2/promise');
 var express = require('express')
 
 var app = express()
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 var jsdom = require('jsdom');
 $ = require('jquery')(new jsdom.JSDOM().window);
 
 const config = {
-    host: "localhost",
-    user: "admin",
-    password: "aopyhtJ0lt)/BTDr",
-    database: "portfolio"
+    host: "eu-cdbr-west-01.cleardb.com",
+    user: "bb33867687f242",
+    password: "1d1d7748",
+    database: "heroku_2dac715d3fc7515"
 }
 
 //Connect
@@ -37,8 +37,6 @@ async function connectDB() {
             'Browser': req.query.browser,
             'Resolution': req.query.resolution
         }
-
-
 
         res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000/");
         res.setHeader("Access-Control-Allow-Origin", "*");
